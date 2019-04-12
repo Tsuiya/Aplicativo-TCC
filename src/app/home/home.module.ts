@@ -10,6 +10,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+
 @NgModule({
   providers:[
     Sim,

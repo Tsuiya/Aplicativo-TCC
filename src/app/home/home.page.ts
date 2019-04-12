@@ -3,6 +3,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { Sim } from '@ionic-native/sim/ngx';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
