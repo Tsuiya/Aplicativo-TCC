@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { Sim } from '@ionic-native/sim/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -11,15 +13,17 @@ import { Sim } from '@ionic-native/sim/ngx';
 })
 export class HomePage {
 
-  constructor(public  sim: Sim, public geolocation: Geolocation, public emailComposer: EmailComposer) { }
+  constructor(public NavController: NavController, public  sim: Sim, public geolocation: Geolocation, public emailComposer: EmailComposer,  public androidPermissions: AndroidPermissions) { }
   
   public simInfo: any;
   public cards: any;
+  mensagem: string;
   subject='Denuncia';
   body='';
   to='tsuiya.hachiman@gmail.com';
-  lat: number;
-  long: number;
+  public lat: number;
+  public long: number;
+
 
   local(){
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -34,8 +38,8 @@ export class HomePage {
     let email = {
       to: this.to,
       subject: this.subject,
-      body: this.body,
-      isHtml: false
+      body: this.mensagem,
+      isHtml: true
     }
     this.emailComposer.open(email);
   }
@@ -53,6 +57,11 @@ export class HomePage {
       console.log(error);
     }
   }
+
+  catar(){
+    this.mensagem = this.body + '<br> <br>' + this.lat + '<br>' + this.long + '<br>' + this.cards;
+  }
+
 
 }
   
