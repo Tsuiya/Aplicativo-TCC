@@ -11,7 +11,7 @@
   <ion-item>Faça uma denuncia: </ion-item><br>
 </ion-list>
   <ion-input  [(ngModel)]="body" type="text" name="mensagem" placeholder="Escreva uma mensagem..." > </ion-input> <br>
-  <ion-button type="submit" (click)="getSimData()" (click)="local()" (click)="catar()" (click)="enviar()" >Enviar</ion-button> <br>
+  <ion-button type="submit" (click)="getSimData()" (click)="local()" (click)="catar()" (click)="enviar()" (click)="getImei()" >Enviar</ion-button> <br>
 
 <ion-list *ngIf="simInfo">
     <ion-item> <b> Código de país: </b> {{simInfo.countryCode}} </ion-item>  
@@ -24,7 +24,7 @@
       <ion-list>
         <ion-item><b>Latitude: </b> {{ lat }} </ion-item>
         <ion-item><b>Longitude: </b> {{ long }} </ion-item>
-        <ion-item><b>IMEI: </b> {{ card.deviceId }} </ion-item>
+        <ion-item><b>IMEI: </b> {{ IMEI }} </ion-item>
         <ion-item><b>Operadora: </b> {{ card.displayName }}</ion-item> 
       </ion-list>
       </ion-card-content>

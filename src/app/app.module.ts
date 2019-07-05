@@ -11,15 +11,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
-
+import { HttpModule } from '@angular/http';
+import { Uid } from '@ionic-native/uid/ngx';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpModule],
   providers: [
     StatusBar,
+    Uid,
     AndroidPermissions,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
