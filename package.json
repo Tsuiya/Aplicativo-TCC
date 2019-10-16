@@ -48,6 +48,7 @@
     "ionic": "^4.12.0",
     "node-gyp": "^3.8.0",
     "node-sass": "^4.12.0",
+    "org.apache.cordova.geolocation": "^0.3.6",
     "rxjs": "^6.4.0",
     "tar": "^4.4.8",
     "zone.js": "~0.8.29"
@@ -93,7 +94,8 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-android-permissions": {},
-      "cordova-plugin-dreamover-uid": {}
+      "cordova-plugin-dreamover-uid": {},
+      "org.apache.cordova.geolocation": {}
     },
     "platforms": [
       "android",

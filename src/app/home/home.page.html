@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Denuncias
+      Denúncias
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list lines="none">
-  <ion-item>Faça uma denuncia: </ion-item><br>
+  <ion-item>Faça uma denúncia: </ion-item><br>
 </ion-list>
   <ion-input  [(ngModel)]="body" type="text" name="mensagem" placeholder="Escreva uma mensagem..." > </ion-input> <br>
   <ion-button type="submit" (click)="getSimData()" (click)="local()" (click)="catar()" (click)="enviar()" (click)="getImei()" >Enviar</ion-button> <br>
@@ -16,7 +16,7 @@
 <ion-list *ngIf="simInfo">
     <ion-item> <b> Código de país: </b> {{simInfo.countryCode}} </ion-item>  
   </ion-list>
-  <ion-card  *ngFor= "let card of cards" >
+  <ion-card *ngFor = "let card of cards">
     <ion-card-header>
       {{card.carrierName}}
     </ion-card-header>

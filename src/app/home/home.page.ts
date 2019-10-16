@@ -27,25 +27,22 @@ export class HomePage {
   public lat: number;
   public long: number;
   public IMEI: string;
+  public url: string;
 
   local(){
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.lat = resp.coords.latitude;
-      this.long = resp.coords.longitude;
-     }).catch((error) => {
-       console.log('Error getting location', error);
-     });
+     let watch = this.geolocation.watchPosition();
+        watch.subscribe((data) => {
+        this.lat = data.coords.latitude;
+        this.long = data.coords.longitude;
+});
+    };
+
+    catar(){
+      this.url = 'http://google.com/maps/bylatlng?lat=' + this.lat + '&lng=' + this.long;
+      this.mensagem = this.body + '<br> <br>' + this.lat + '<br>' + this.long + '<br>' + this.uid.IMEI + '<br>' + '<br>' + this.url ;
     }
 
-  enviar(){
-    let email = {
-      to: this.to,
-      subject: this.subject,
-      body: this.mensagem,
-      isHtml: true
-    }
-    this.emailComposer.open(email);
-  }
+ 
 
   async getSimData() {
     try {
@@ -74,8 +71,6 @@ export class HomePage {
       if (!result.hasPermission) {
         throw new Error('Permissions required');
       }
-   
-      // ok, a user gave us permission, we can get him identifiers after restart app
       return;
     }
    
@@ -83,10 +78,15 @@ export class HomePage {
 
    }
 
-  catar(){
-    this.mensagem = this.body + '<br> <br>' + this.lat + '<br>' + this.long + '<br>' + this.uid.IMEI;
+   enviar(){
+    let email = {
+      to: this.to,
+      subject: this.subject,
+      body: this.mensagem,
+      isHtml: true
+    }
+    this.emailComposer.open(email);
   }
-
 
 }
   
