@@ -47,7 +47,7 @@
     "core-js": "^2.5.4",
     "ionic": "^4.12.0",
     "node-gyp": "^3.8.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "org.apache.cordova.geolocation": "^0.3.6",
     "rxjs": "^6.4.0",
     "tar": "^4.4.8",
