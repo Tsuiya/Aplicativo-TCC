@@ -31,7 +31,7 @@
     "@ionic/angular": "^4.6.0",
     "ajv": "^6.10.0",
     "cordova": "^9.0.0",
-    "cordova-android": "7.1.4",
+    "cordova-android": "11.0.0",
     "cordova-browser": "6.0.0",
     "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-device": "^2.0.2",
